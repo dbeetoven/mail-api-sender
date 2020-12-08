@@ -1,0 +1,27 @@
+{
+  "name": "mail-sender",
+  "version": "1.0.0",
+  "description": "Node app to send emails automatically",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "node-mailer",
+    "email-sender"
+  ],
+  "author": "https://dbeetoven.me",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.16"
+  },
+  "engines": {
+    "node": "12.16.2"
+  }
+}
