@@ -13,20 +13,19 @@ const sendMail = (data, callback) => {
     },
   })
   const mailOptions = {
-    from:  `${process.env.FROM_NAME} <${process.env.SENDER_MAIL}>`,
-    to: `${data.email}`,
-    bcc: `${data.saler}`,
+    from: `${process.env.SENDER_MAIL}`,
+    to: `${data.saler}`,
     subject: 'Ordem de compra',
-    text:data.body,
+    text: data.body,
     envelope: {
       from: `${process.env.SENDER_MAIL}`,
-      to: `${data.email}`
-  }
+      to: `${data.email}`,
+    },
   }
 
   transporter.sendMail(mailOptions, callback)
 }
 
 module.exports = {
-  sendMail
+  sendMail,
 }

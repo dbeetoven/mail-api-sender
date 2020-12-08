@@ -10,15 +10,16 @@ const app = express();
 
 
 app.use(cors({origin: "*" }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '10mb', extended: true}))
+app.use(bodyParser.urlencoded({limit: '10mb', extended: true}))
 
 
 app.post("/sendmail", (req, res) => {
-  console.log("request received");
+  console.log(`request received: ${req.body}`);
   let data = req.body;
   sendMail(data, (err, info) => {
     if (err) {
-      console.log(err);
+      console.log({err});
       res.status(400);
       res.send({ error: "Failed to send email" });
     } else {
